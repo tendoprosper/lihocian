@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LIHOCIAN School Website - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --primary: #c00;
+      --background: #e5f0f1;
+      --text: #111;
+      --card-bg: #fff;
+      --footer-bg: #222;
+    }
+
+
+    body.dark {
+      --background: #121212;
+      --text: #eee;
+      --card-bg: #1e1e1e;
+      --footer-bg: #000;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      max-width: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .toggle-mode:hover {
+      background: #eee;
+      transform: scale(1.05);
+    }
+
+    .floating-images {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      overflow-x: auto;
+      animation: scrollLeft 25s linear infinite;
+    }
+
+    .floating-images img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-images img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .section {
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.696);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .buttons-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .buttons-grid a {
+      background: var(--primary);
+      color: rgb(255, 255, 255);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      flex: 1 1 calc(50% - 1rem);
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .buttons-grid a:hover {
+      background: rgb(106, 78, 71);
+      transform: scale(1.02);
+    }
+
+    .ranking-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ranking-table th, .ranking-table td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .ranking-table th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .image-button {
+      background-size: cover;
+      background-position: center;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 0, 0);
+      font-weight: bolder;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .image-button.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image-button:hover {
+      transform: scale(1.05);
+      opacity: 0.95;
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: #eee;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .buttons-grid a {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="sch3.jpg" alt="School Badge">
+    <div class="toggle-mode" onclick="toggleMode()">🌗 Toggle Mode</div>
+    <h1>LIVING HOPE CHRISTIAN HIGH SCHOOL</h1>
+    <p><strong>Motto:</strong> GOD IS OUR HOPE FOR SUCCESS</p>
+    <p><strong>Theme of the Term:</strong> "Empowering Learners for Tomorrow"</p>
+    <p><strong>Verse of the Term:</strong> Proverbs 1:7 - "The fear of the Lord is the beginning of knowledge."</p>
+  </header>
+
+  <div class="floating-images">
+    <img src="sch.jpg" alt="School Moment">
+    <img src="sch1.jpg" alt="School Moment">
+    <img src="sch2.jpg" alt="School Moment">
+    <img src="sch3.jpg" alt="School Moment">
+    <img src="sch4.jpg" alt="School Moment">
+    <img src="sch5.jpg" alt="School Moment">
+    <img src="sch6.jpg" alt="School Moment">
+    <img src="sch7.jpg" alt="School Moment">
+    <img src="sch8.jpg" alt="School Moment">
+    <img src="sch9.jpg" alt="School Moment">
+  </div>
+
+  <div class="section">
+    <div class="card">
+      <h2>Best Students of the Term</h2>
+      <ul>
+        <li>Best Behaved: Sarah Kintu</li>
+        <li>Smartest: Brian Okello</li>
+        <li>Best Performed: Anita Namuli</li>
+        <li>Most Disciplined: Joshua Kato</li>
+        <li>Most Improved: Fiona Musoke</li>
+      </ul>
+    </div>
+
+    <div class="buttons-grid">
+      <a href="e-report.html">E-Reports</a>
+      <a href="church.html">Elshadai Church</a>
+      <a href="leaders.html">School leaders</a>
+    </div>
+
+    <div class="card">
+      <h2>Program of the Term</h2>
+      <p>Week 1 - Orientation | Week 2-3 - Midterm Tests | Week 6 - Sports Gala | Week 9 - Exams</p>
+    </div>
+    
+    <div class="card">
+      <h2>School Core Values</h2>
+      <ul>
+        <li>Integrity</li>
+        <li>Discipline</li>
+        <li>Hard Work</li>
+        <li>Excellence</li>
+        <li>Faith</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Message from the Principal</h2>
+      <p>Welcome to another term of growth and success. Let's stay committed to our goals and support each other in all we do.</p>
+    </div>
+
+    <div class="card">
+      <h2>Announcements</h2>
+      <p>Parents meeting on 14th May | Prefects elections next week | MDD auditions ongoing!</p>
+    </div>
+
+    <a class="image-button" href="sports.html" style="background-image: url('sch1.jpg');">
+      Explore Our Sports Program
+    </a>
+
+    <div class="buttons-grid">
+      <a href="#">Webb House</a>
+      <a href="#">Conrad House</a>
+      <a href="#">Perry House</a>
+      <a href="#">Chris House</a>
+    </div>
+
+    <div class="card">
+      <h2>Team Rankings</h2>
+      <table class="ranking-table">
+        <tr><th>Team</th><th>Wins</th><th>Losses</th><th>Marks</th></tr>
+        <tr><td>Webb</td><td>5</td><td>1</td><td>90</td></tr>
+        <tr><td>Chris</td><td>4</td><td>2</td><td>85</td></tr>
+        <tr><td>Perry</td><td>3</td><td>3</td><td>70</td></tr>
+        <tr><td>Conrad</td><td>2</td><td>4</td><td>65</td></tr>
+      </table>
+    </div>
+
+    <a class="image-button" href="clubs.html" style="background-image: url('sch7.jpg');">
+      Discover Our Clubs
+    </a>
+
+    <a class="image-button" href="mdd.html" style="background-image: url('sch8.jpg');">
+      MDD Performances
+    </a>
+
+    <div class="card">
+      <h2>School News</h2>
+      <p>New science lab launched! | School ranked top 5 in district | MDD team wins regional championship!</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact Us</h2>
+      <p>Phone: +256 700 000000 | Email: info@starlighthigh.ac.ug | Location: Plot 12, Sunrise Avenue, Kampala</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; Living Hope Christian High School. Designed by TendoS Tech
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.card, .image-button').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

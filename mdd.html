@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Dance and Drama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      background: #c00;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .teams-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+      animation: slideUp 1s ease-in-out;
+    }
+    .team-card {
+      background: #f4f4f4;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+    .team-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .team-info {
+      padding: 1rem;
+    }
+    .team-info h2 {
+      margin-bottom: 0.5rem;
+      color: #c00;
+    }
+    .team-info p {
+      font-size: 1rem;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .back-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .back-button:hover {
+      background: #900;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Music, Dance & Drama</h1>
+    <p>Explore the talents and performances of our amazing teams!</p>
+  </header>
+  <a class="back-button" href="index.html">← Back</a>
+  <section class="teams-section">
+    <div class="team-card">
+      <img src="https://via.placeholder.com/400x200?text=Webb+Team" alt="Webb Team">
+      <div class="team-info">
+        <h2>Webb House</h2>
+        <p>Webb team amazed the crowd with their energetic traditional dance and poetic drama about unity.</p>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="https://via.placeholder.com/400x200?text=Perry+Team" alt="Perry Team">
+      <div class="team-info">
+        <h2>Perry House</h2>
+        <p>Perry performed a modern fusion dance and an original musical about hope and education.</p>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="https://via.placeholder.com/400x200?text=Conrad+Team" alt="Conrad Team">
+      <div class="team-info">
+        <h2>Conrad House</h2>
+        <p>Conrad wowed the audience with a dramatic skit on climate change and a beautiful choir performance.</p>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="https://via.placeholder.com/400x200?text=Chriss+Team" alt="Chriss Team">
+      <div class="team-info">
+        <h2>Chriss House</h2>
+        <p>Chriss House lit up the stage with a cultural showcase and a captivating dance drama.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

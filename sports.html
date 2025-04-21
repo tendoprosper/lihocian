@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIHOCIAN Sports Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #111;
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+   
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #111;
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+    body.dark-mode {
+      background: #111;
+      color: #eee;
+    }
+    header {
+      background: #c00;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #c00;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      transition: background 0.3s;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    body.dark-mode .card {
+      background: #222;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+    .toggle-mode:hover {
+      background: #900;
+    }
+    .feature:hover, .gallery-card:hover, .poll:hover, .schedule:hover {
+      transform: scale(1.02);
+    }
+    .live-scoreboard {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #c00;
+      animation: pulse 1s infinite alternate;
+    }
+    @keyframes pulse {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+    .features, .gallery, .polls, .highlight-videos, .leaderboard, .carousel, .schedule, .fan-wall, .comparison {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .feature, .gallery-card, .poll, .video-card, .leaderbar, .carousel-card, .schedule-card, .fan-card, .compare-card {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    body.dark-mode .feature,
+    body.dark-mode .gallery-card,
+    body.dark-mode .poll,
+    body.dark-mode .video-card,
+    body.dark-mode .leaderbar,
+    body.dark-mode .carousel-card,
+    body.dark-mode .schedule-card,
+    body.dark-mode .fan-card,
+    body.dark-mode .compare-card {
+      background: #333;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .back-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .back-button:hover {
+      background: #900;
+    }
+    body.dark-mode {
+      background: #111;
+      color: #eee;
+    }
+    header {
+      background: #c00;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #c00;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      transition: background 0.3s;
+    }
+    body.dark-mode .card {
+      background: #222;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+    .toggle-mode:hover {
+      background: #900;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #c00;
+      color: white;
+    }
+    .player-table th, .player-table td {
+      text-align: center;
+    }
+    img.best-player {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0.5rem;
+    }
+    .image-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .back-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .back-button:hover {
+      background: #900;
+    }
+  </style>
+</head>
+<body>
+  <a class="back-button" href="index.html">← Back</a>
+  <div class="toggle-mode" onclick="toggleDarkMode()">Toggle Mode</div>
+  <header>
+    <h1>LIHOCIAN Sports Hub</h1>
+    <p>Welcome to our termly sports overview</p>
+  </header>
+  <div class="card" data-aos="fade-up">
+    <h2>🏟️ Live Scoreboard & Countdown</h2>
+    <div class="live-scoreboard">Today's Game: Chris vs Conrad — Starts in 2h 15m</div>
+  </div>
+  <div class="card" data-aos="fade-up">
+    <h2>Sports Program of the Term</h2>
+    <ul>
+      <li>Week 1: Sports Orientation</li>
+      <li>Week 2-3: House Training Sessions</li>
+      <li>Week 4: Inter-house Trials</li>
+      <li>Week 6: Friendly Matches</li>
+      <li>Week 8: Sports Gala Finals</li>
+    </ul>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>House Captains & Patrons</h2>
+    <ul>
+      <li>Webb House - Captain: John Ssenkaayi | Patron: Mr. Ouma</li>
+      <li>Conrad House - Captain: Lisa Nakabugo | Patron: Miss Tracy</li>
+      <li>Perry House - Captain: Mark Kato | Patron: Mr. Wasswa</li>
+      <li>Chris House - Captain: Fiona Kyomuhendo | Patron: Mr. Tumusiime</li>
+    </ul>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Soccer Players by House</h2>
+    <table class="player-table">
+      <tr><th>House</th><th>Player Name</th><th>Section</th><th>Jersey No.</th></tr>
+      <tr><td>Webb</td><td>Peter Odongo</td><td>Defense</td><td>5</td></tr>
+      <tr><td>Webb</td><td>Ivan Kaggwa</td><td>Midfield</td><td>8</td></tr>
+      <tr><td>Conrad</td><td>Samuel Kimani</td><td>Goalkeeper</td><td>1</td></tr>
+      <tr><td>Chris</td><td>Andrew Ssemanda</td><td>Forward</td><td>11</td></tr>
+      <tr><td>Perry</td><td>Stephen Lwanga</td><td>Defense</td><td>4</td></tr>
+    </table>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Netball Players</h2>
+    <table class="player-table">
+      <tr><th>House</th><th>Player Name</th><th>Position</th><th>Jersey No.</th></tr>
+      <tr><td>Webb</td><td>Jane Nankya</td><td>Goal Shooter</td><td>9</td></tr>
+      <tr><td>Conrad</td><td>Rita Akello</td><td>Wing Attack</td><td>6</td></tr>
+      <tr><td>Chris</td><td>Norah Atuhaire</td><td>Centre</td><td>3</td></tr>
+      <tr><td>Perry</td><td>Agnes Namirimu</td><td>Goal Keeper</td><td>2</td></tr>
+    </table>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Soccer Results</h2>
+    <table>
+      <tr><th>House</th><th>Wins</th><th>Losses</th></tr>
+      <tr><td>Webb</td><td>3</td><td>1</td></tr>
+      <tr><td>Conrad</td><td>2</td><td>2</td></tr>
+      <tr><td>Perry</td><td>1</td><td>3</td></tr>
+      <tr><td>Chris</td><td>4</td><td>0</td></tr>
+    </table>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Netball Results</h2>
+    <table>
+      <tr><th>House</th><th>Wins</th><th>Losses</th></tr>
+      <tr><td>Webb</td><td>2</td><td>2</td></tr>
+      <tr><td>Conrad</td><td>3</td><td>1</td></tr>
+      <tr><td>Perry</td><td>0</td><td>4</td></tr>
+      <tr><td>Chris</td><td>4</td><td>0</td></tr>
+    </table>
+  </div>
+  <div class="card" data-aos="fade-up">
+    <h2>📊 Animated House Leaderboard</h2>
+    <div class="leaderboard">
+      <div class="leaderbar">Chris House - 🏆 4 Wins, 3 MVPs, 120 Fans</div>
+      <div class="leaderbar">Webb House - 🥈 3 Wins, 4 MVPs, 90 Fans</div>
+      <div class="leaderbar">Conrad House - 🥉 2 Wins, 2 MVPs, 70 Fans</div>
+      <div class="leaderbar">Perry House - 1 Win, 1 MVP, 60 Fans</div>
+    </div>
+    
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h2>⚔️ Netball</h2>
+        <div class="comparison">
+          <div class="compare-card">Chris vs Perry — Wins: 3 vs 1 | Goals: 12 vs 7 | MVPs: 2 vs 1</div>
+          <div class="compare-card">Webb vs Conrad — Wins: 2 vs 2 | Goals: 10 vs 9 | MVPs: 3 vs 2</div>
+        </div>
+  </div>
+  <div class="card" data-aos="fade-up">
+    <h2>Best Sports Person of the Term</h2>
+    <div class="image-row">
+      <img class="best-player" src="sch5.jpg" alt="Best Player 1">
+      <img class="best-player" src="sch6.jpg" alt="Best Player 2">
+    </div>
+  </div>
+  
+
+  <div class="card" data-aos="fade-up">
+    <h2>Sports News</h2>
+    <ul>
+      <li>Chris House remains undefeated in both sports!</li>
+      <li>New sports kits arriving next term</li>
+      <li>Regional tournament next month!</li>
+    </ul>
+  </div>
+  <div class="card" data-aos="fade-up">
+    <h2>📸 Interactive Team Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-card">Webb House - Soccer Team Photo + History</div>
+      <div class="gallery-card">Chris House - Netball Team Photo + Achievements</div>
+      <div class="gallery-card">Conrad House - Soccer Highlights + Team Profile</div>
+      <div class="gallery-card">Perry House - Netball Team + Notable Wins</div>
+    </div>
+  </div>
+  <div class="card" data-aos="fade-up">
+    <h2>❤️ Fan Wall</h2>
+    <div class="fan-wall">
+      <div class="fan-card">"Go Chris House! You got this!" - Kevin</div>
+      <div class="fan-card">"Perry House never gives up!" - Joan</div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+      document.body.classList.toggle('dark-mode');
+      
+  
+    AOS.init();
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    
+  </script>
+</body>
+</html>

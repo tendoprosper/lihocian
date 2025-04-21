@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Leadership</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #111;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #c00;
+      margin-bottom: 2rem;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      color: #c00;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .leader-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .leader-card {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .leader-card:hover {
+      transform: scale(1.05);
+    }
+    .leader-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+    .leader-name {
+      font-weight: bold;
+      color: #222;
+    }
+    .leader-position {
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .back-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .back-button:hover {
+      background: #900;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏫 School Leadership Team</h1>
+  <a class="back-button" href="index.html">← Back</a>
+  <div class="section">
+    <div class="section-title">📋 Board Leaders</div>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <img src="board1.jpg" alt="Leader">
+        <div class="leader-name">Mr. Emmanuel Ssenyonjo</div>
+        <div class="leader-position">Chairperson Board</div>
+      </div>
+      <div class="leader-card">
+        <img src="board2.jpg" alt="Leader">
+        <div class="leader-name">Mrs. Juliet Namakula</div>
+        <div class="leader-position">Vice Chairperson</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎓 Teacher Leaders</div>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <img src="teacher1.jpg" alt="Leader">
+        <div class="leader-name">Mr. Denis Kagimu</div>
+        <div class="leader-position">Head Teacher</div>
+      </div>
+      <div class="leader-card">
+        <img src="teacher2.jpg" alt="Leader">
+        <div class="leader-name">Mrs. Grace Nanteza</div>
+        <div class="leader-position">Deputy Academics</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">👨‍🎓 Student Leaders (Prefects)</div>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <img src="prefect1.jpg" alt="Leader">
+        <div class="leader-name">Joel Mukasa</div>
+        <div class="leader-position">Head Prefect</div>
+      </div>
+      <div class="leader-card">
+        <img src="prefect2.jpg" alt="Leader">
+        <div class="leader-name">Sarah Nakato</div>
+        <div class="leader-position">Assistant Head Prefect</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🔧 Non-Teaching Staff Leaders</div>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <img src="security.jpg" alt="Leader">
+        <div class="leader-name">Mr. Jacob Okello</div>
+        <div class="leader-position">Head of Security</div>
+      </div>
+      <div class="leader-card">
+        <img src="chef.jpg" alt="Leader">
+        <div class="leader-name">Chef Rose Katushabe</div>
+        <div class="leader-position">Head Chef</div>
+      </div>
+      <div class="leader-card">
+        <img src="cleaning.jpg" alt="Leader">
+        <div class="leader-name">Ms. Doreen Achieng</div>
+        <div class="leader-position">Head of Cleaning</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

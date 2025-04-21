@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELSHADAI Church</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #111;
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+    body.dark-mode {
+      background: #111;
+      color: #eee;
+    }
+    header {
+      background: #c00;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #c00;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      transition: background 0.3s;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    body.dark-mode .card {
+      background: #222;
+    }
+    .programs, .leaders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .program, .leader-card {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    body.dark-mode .program, body.dark-mode .leader-card {
+      background: #333;
+    }
+    .program img, .leader-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .back-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: #c00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .back-button:hover {
+      background: #900;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-button" href="index.html">← Back</a>
+  <header>
+    <h1>ELSHADAI Church</h1>
+    <p>Welcome to our Church Programs and Leaders' Page</p>
+  </header>
+  
+
+  <div class="card" data-aos="fade-up">
+    <h2>⛪ Church Programs</h2>
+    <div class="programs">
+      <div class="program">
+        <img src="church-program-1.jpg" alt="Sunday Service">
+        <h3>Sunday Service</h3>
+        <p>Join us for an inspiring service every Sunday at 10:00 AM.</p>
+      </div>
+      <div class="program">
+        <img src="church-program-2.jpg" alt="Prayer Meeting">
+        <h3>Prayer Meeting</h3>
+        <p>Join us every Wednesday at 6:00 PM for powerful prayer sessions.</p>
+      </div>
+      <div class="program">
+        <img src="church-program-3.jpg" alt="Bible Study">
+        <h3>Bible Study</h3>
+        <p>Every Thursday evening at 7:00 PM. Dig deeper into God's word.</p>
+      </div>
+      <div class="program">
+        <img src="church-program-4.jpg" alt="Youth Fellowship">
+        <h3>Youth Fellowship</h3>
+        <p>Every Friday evening at 5:00 PM for young people to come together and grow in faith.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>👥 Church Leaders</h2>
+    <div class="leaders">
+      <div class="leader-card">
+        <img src="leader-1.jpg" alt="Pastor John Doe">
+        <h3>Pastor John Doe</h3>
+        <p>Lead Pastor</p>
+        <p>Pastor John has been serving the community for over 15 years, providing spiritual guidance and leadership.</p>
+      </div>
+      <div class="leader-card">
+        <img src="leader-2.jpg" alt="Sister Mary Smith">
+        <h3>Sister Mary Smith</h3>
+        <p>Women's Ministry Leader</p>
+        <p>Sister Mary leads the Women's Ministry, empowering women of all ages to grow in faith and service.</p>
+      </div>
+      <div class="leader-card">
+        <img src="leader-3.jpg" alt="Brother James Johnson">
+        <h3>Brother James Johnson</h3>
+        <p>Youth Ministry Leader</p>
+        <p>Brother James oversees the Youth Ministry, encouraging the next generation to live for Christ.</p>
+      </div>
+      <div class="leader-card">
+        <img src="leader-4.jpg" alt="Sister Sarah Williams">
+        <h3>Sister Sarah Williams</h3>
+        <p>Prayer Ministry Leader</p>
+        <p>Sister Sarah leads the Prayer Ministry, guiding our church in deep and powerful intercession.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

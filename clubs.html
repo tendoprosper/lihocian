@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Clubs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+      color: #111;
+      padding: 1rem;
+    }
+    header {
+      background: #c00;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .clubs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .club-card {
+      background: #fff;
+      border: 2px solid #c00;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .club-card:hover {
+      transform: scale(1.03);
+    }
+    h2 {
+      color: #c00;
+      margin-bottom: 1rem;
+    }
+    .announcement {
+      background: #ffecec;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-left: 4px solid #c00;
+      border-radius: 8px;
+    }
+    .announcement p {
+      margin-bottom: 0.5rem;
+    }
+    .back-button {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      background: #c00;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a class="back-button" href="index.html">← Back</a>
+  <header>
+    <h1>📚 School Clubs</h1>
+    <p>Discover, Participate, and Shine in Our Clubs</p>
+  </header>
+
+  <div class="clubs">
+    <a class="club-card" href="writing-club.html" data-aos="fade-up">
+      <h3>📝 Writing Club</h3>
+      <p>Explore creative writing, poetry, and storytelling.</p>
+      <strong>Best: Published a school anthology.</strong>
+    </a>
+    <a class="club-card" href="mdd-club.html" data-aos="fade-up">
+      <h3>🎭 MDD Club</h3>
+      <p>Music, Dance, and Drama performances every term.</p>
+      <strong>Best: Won regional MDD festival.</strong>
+    </a>
+    <a class="club-card" href="computer-club.html" data-aos="fade-up">
+      <h3>💻 Computer Club</h3>
+      <p>Learning coding, web design, and robotics.</p>
+      <strong>Best: Built the school website.</strong>
+    </a>
+    <a class="club-card" href="science-club.html" data-aos="fade-up">
+      <h3>🔬 Science Club</h3>
+      <p>Fun experiments and science fair projects.</p>
+      <strong>Best: Invented eco water filter model.</strong>
+    </a>
+  </div>
+
+  <div class="announcement" data-aos="fade-up">
+    <h2>📢 Club Announcements</h2>
+    <p>📝 Writing Club: Meeting on Friday 2PM in Room 4.</p>
+    <p>🎭 MDD Club: Rehearsal every Tuesday and Thursday at 4PM.</p>
+    <p>💻 Computer Club: Coding competition next week!</p>
+    <p>🔬 Science Club: Bring lab coats for Monday's experiment.</p>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
